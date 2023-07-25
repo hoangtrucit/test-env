@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  apply-infras:
+  call-workflow-passing-data:
     uses: ./.github/workflows/sync-infras.yml
     with:
       environment: test
+    secrets: inherit
