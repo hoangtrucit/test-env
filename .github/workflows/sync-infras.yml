@@ -6,9 +6,6 @@ on:
       environment:
         required: true
         type: string
-    secrets:
-      VAR_A:
-        required: true
 
 jobs:
   apply-infras:

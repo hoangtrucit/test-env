@@ -6,8 +6,6 @@ on:
 jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/sync-infras.yml
-    environment: dev
     with:
-      environment: "${{ github.sha }}-artifact"
-    secrets:
-      VAR_A: '123'
+      environment: dev
+    secrets: inherit
