@@ -1,0 +1,21 @@
+name: Sync Infras Flow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+    secrets:
+      VAR_A:
+        required: true
+
+jobs:
+  apply-infras:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Test
+        run: |
+          echo '${{ inputs.environment }}' 
+          echo '${{ secrets.VAR_A }}'

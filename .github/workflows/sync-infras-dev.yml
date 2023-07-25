@@ -1,0 +1,13 @@
+name: Sync infrastructure to Dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    environment: dev
+    uses: ./.github/workflows/sync-infras.yml
+    with:
+      environment: dev
+    secrets:
+      VAR_A: ${{ secrets.VAR_A }}

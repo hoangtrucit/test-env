@@ -1,0 +1,10 @@
+name: Sync infrastructure to Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  apply-infras:
+    uses: ./.github/workflows/sync-infras.yml
+    with:
+      environment: test
