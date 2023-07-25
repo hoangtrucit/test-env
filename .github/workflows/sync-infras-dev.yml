@@ -10,4 +10,4 @@ jobs:
     with:
       environment: dev
     secrets:
-      VAR_A: ${{ secrets.VAR_A }}
+      VAR_A: '123'
