@@ -1,6 +1,6 @@
 {
   "name": "om-apm-backend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": "",
   "private": true,
@@ -27,8 +27,7 @@
     "test:cov": "jest --config ./test/jest.json --runInBand --coverage --detectOpenHandles --no-cache",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json --runInBand --detectOpenHandles --no-cache",
-    "test:clear": "jest --clearCache",
-    "postinstall": "[[ -d './.husky' ]] && exit 0; husky install;"
+    "test:clear": "jest --clearCache"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",

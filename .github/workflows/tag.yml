@@ -35,5 +35,10 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+      - name: Setup Git
+        run: |
+          git config --global user.email "github@github.com"
+          git config --global user.name "github"
+
+      - name: Bump
+        run: yarn release ${{ inputs.segment }} --ci
