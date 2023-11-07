@@ -1,0 +1,39 @@
+name: CD Process
+
+on:
+  workflow_dispatch:
+    inputs:
+      segment:
+        required: true
+        description: segment
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  build-push-gcr:
+    name: Tag & Change Log
+    runs-on: ubuntu-latest
+    permissions: 
+      actions: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: |
+            package.json
+            yarn.lock
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
